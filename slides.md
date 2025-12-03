@@ -3,7 +3,7 @@
 theme: default
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: https://images.unsplash.com/photo-1599507593548-0187ac4043c6?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+background: assets/background.jpg
 title: Nouveautés PHP
 class: text-center
 # https://sli.dev/features/drawing
@@ -13,8 +13,7 @@ drawings:
 transition: slide-left
 # enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
-# duration of the presentation
-duration: 35min
+favicon: assets/favicon.ico
 lineNumbers: true
 ---
 
@@ -27,7 +26,7 @@ layout: cover
 background: '#4F5B93'
 ---
 
-# ![](https://www.php.net/images/php8/logo_php8.svg){width=400px}
+# ![](/assets/logo_php8.svg){width=400px}
 
 ---
 
@@ -284,7 +283,7 @@ layout: cover
 background: '#4F5B93'
 ---
 
-# ![](https://www.php.net/images/php8/logo_php8_1.svg){width=400px}
+# ![](/assets/logo_php8_1.svg){width=400px}
 
 ---
 
@@ -606,7 +605,7 @@ layout: cover
 background: '#4F5B93'
 ---
 
-# ![](https://www.php.net/images/php8/logo_php8_2.svg){width=400px}
+# ![](/assets/logo_php8_2.svg){width=400px}
 
 ---
 
@@ -775,7 +774,7 @@ layout: cover
 background: '#4F5B93'
 ---
 
-# ![](https://www.php.net/images/php8/logo_php8_3.svg){width=400px}
+# ![](/assets/logo_php8_3.svg){width=400px}
 
 ---
 
@@ -807,7 +806,7 @@ layout: cover
 background: '#4F5B93'
 ---
 
-# ![](https://www.php.net/images/php8/logo_php8_4.svg){width=400px}
+# ![](/assets/logo_php8_4.svg){width=400px}
 
 ---
 
@@ -928,7 +927,7 @@ layout: cover
 background: '#4F5B93'
 ---
 
-# ![](https://www.php.net/images/php8/logo_php8_5.svg){width=400px}
+# ![](/assets/logo_php8_5.svg){width=400px}
 
 ---
 
