@@ -1,17 +1,11 @@
 ---
-# try also 'default' to start simple
 theme: default
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
 background: /background.jpg
 title: Nouveautés PHP
 class: text-center
-# https://sli.dev/features/drawing
 drawings:
   persist: false
-# slide transition: https://sli.dev/guide/animations.html#slide-transitions
 transition: slide-left
-# enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
 favicon: assets/favicon.ico
 lineNumbers: true
@@ -64,35 +58,6 @@ Message dans les Release Notes de Laravel 8 et supérieur :
 Nous pourrions choisir de renommer les arguments des fonctions si nécessaire afin d'améliorer le code source de Laravel.  
 Par conséquent, l'utilisation d'arguments nommés lors de l'appel de méthodes Laravel doit être effectuée avec prudence et en gardant à l'esprit que les noms des paramètres pourraient changer à l'avenir."
 </v-click>
-
-<!-- ---
-
-# Attributs 
-
-Au lieux d'annotations PHPDoc, vous pouvez désormais utiliser les métadonnées structurés avec la syntaxe native de PHP.
-
-Exemple :
-````md magic-move
-```php
-// PHP < 8.0
-class PostsController
-{
-    /**
-     * @Route("/api/posts/{id}", methods={"GET"})
-     */
-    public function get($id) { /* ... */ }
-}
-```
-
-```php
-// PHP 8.0
-class PostsController
-{
-    #[Route("/api/posts/{id}", methods: ["GET"])]
-    public function get($id) { /* ... */ }
-}
-```
-```` -->
 
 ---
 
@@ -453,41 +418,6 @@ function count_and_iterate(Iterator&Countable $value) {
 ```
 ````
 
-<!-- ---
-
-# Never return type
-
-A function or method declared with the `never` type indicates that it will not return a value and will either throw an exception or end the script’s execution with a call of `die()`, `exit()`, `trigger_error()`, or something similar.
-
-Exemple :
-````md magic-move
-```php
-// PHP < 8.1
-function redirect(string $uri) {
-    header('Location: ' . $uri);
-    exit();
-}
-
-function redirectToLoginPage() {
-    redirect('/login');
-    echo 'Hello'; // <- dead code
-}
-```
-
-```php
-// PHP 8.1
-function redirect(string $uri): never {
-    header('Location: ' . $uri);
-    exit();
-}
-
-function redirectToLoginPage(): never {
-    redirect('/login');
-    echo 'Hello'; // <- dead code detected by static analysis
-}
-```
-```` -->
-
 ---
 
 # Final class constants
@@ -543,33 +473,6 @@ Exemple :
 0o16 === 14; // true
 ```
 ````
-
-<!-- ---
-
-# Fibers
-
-Fibers are primitives for implementing lightweight cooperative concurrency. They are a means of creating code blocks that can be paused and resumed like Generators, but from anywhere in the stack. Fibers themselves don't magically provide concurrency, there still needs to be an event loop. However, they allow blocking and non-blocking implementations to share the same API.  
-Fibers allow getting rid of the boilerplate code previously seen with `Promise::then()` or Generator based coroutines. Libraries will generally build further abstractions around Fibers, so there's no need to interact with them directly.
-
-Exemple :
-````md magic-move
-```php
-// PHP < 8.1
-$httpClient->request('https://example.com/')
-        ->then(function (Response $response) {
-            return $response->getBody()->buffer();
-        })
-        ->then(function (string $responseBody) {
-            print json_decode($responseBody)['code'];
-        });
-```
-
-```php
-// PHP 8.1
-$response = $httpClient->request('https://example.com/');
-print json_decode($response->getBody()->buffer())['code'];
-```
-```` -->
 
 ---
 
@@ -676,37 +579,6 @@ class Foo {
 }
 ```
 ````
-
-<!-- ---
-
-# Permettre `null`, `false`, et `true` comme types stand-alone
-
-Exemple :
-````md magic-move
-```php
-// PHP < 8.2
-class Falsy
-{
-    public function almostFalse(): bool { /* ... */ *}
-
-    public function almostTrue(): bool { /* ... */ *}
-
-    public function almostNull(): string|null { /* ... */ *}
-}
-```
-
-```php
-// PHP 8.2
-class Falsy
-{
-    public function alwaysFalse(): false { /* ... */ *}
-
-    public function alwaysTrue(): true { /* ... */ *}
-
-    public function alwaysNull(): null { /* ... */ *}
-}
-```
-```` -->
 
 ---
 
