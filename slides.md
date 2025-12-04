@@ -3,7 +3,7 @@
 theme: default
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: assets/background.jpg
+background: /assets/background.jpg
 title: Nouveautés PHP
 class: text-center
 # https://sli.dev/features/drawing
